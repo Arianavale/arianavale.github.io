@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ariana Vale - The Weave Arbiter Trilogy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1f35 0%, #2c3e50 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            border-bottom: 1px solid rgba(218, 165, 32, 0.3);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: #DAA520;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #cccccc;
+        }
+
+        /* Books Carousel Section */
+        .books-carousel {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .carousel-container {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            position: relative;
+        }
+
+        .book-display {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            flex: 1;
+            min-height: 600px;
+        }
+
+        .book-cover {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .book-cover img {
+            width: 350px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .book-cover img:hover {
+            transform: translateY(-10px);
+        }
+
+        .series-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(218, 165, 32, 0.95);
+            color: #1a1f35;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(218, 165, 32, 0.4);
+        }
+
+        .book-info {
+            flex: 1;
+        }
+
+        .book-info h2 {
+            font-size: 3rem;
+            color: #DAA520;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .book-info h3 {
+            font-size: 1.3rem;
+            color: #b8b8b8;
+            font-style: italic;
+            font-weight: normal;
+            margin-bottom: 30px;
+        }
+
+        .book-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #d0d0d0;
+            margin-bottom: 35px;
+        }
+
+        .book-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 35px;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            color: #DAA520;
+            border: 1px solid rgba(218, 165, 32, 0.2);
+            transition: all 0.3s;
+        }
+
+        .feature:hover {
+            background: rgba(218, 165, 32, 0.15);
+            border-color: rgba(218, 165, 32, 0.4);
+        }
+
+        .book-actions {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+            cursor: pointer;
+            border: 2px solid;
+        }
+
+        .btn-primary {
+            background: #DAA520;
+            color: #1a1f35;
+            border-color: #DAA520;
+            font-weight: bold;
+        }
+
+        .btn-primary:hover {
+            background: #c99300;
+            border-color: #c99300;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(218, 165, 32, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #DAA520;
+            border-color: #DAA520;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(218, 165, 32, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Carousel Arrows */
+        .carousel-arrow {
+            background: rgba(218, 165, 32, 0.15);
+            border: 2px solid #DAA520;
+            color: #DAA520;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            font-size: 36px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .carousel-arrow:hover {
+            background: #DAA520;
+            color: #1a1f35;
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(218, 165, 32, 0.4);
+        }
+
+        .carousel-arrow:active {
+            transform: scale(1.05);
+        }
+
+        /* Carousel Indicators */
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 50px;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.25);
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .indicator.active {
+            background: #DAA520;
+            width: 45px;
+            border-radius: 6px;
+            box-shadow: 0 0 15px rgba(218, 165, 32, 0.6);
+        }
+
+        .indicator:hover:not(.active) {
+            background: rgba(218, 165, 32, 0.5);
+            transform: scale(1.2);
+        }
+
+        /* Newsletter Section */
+        .newsletter-section {
+            background: rgba(255, 255, 255, 0.03);
+            border-top: 1px solid rgba(218, 165, 32, 0.3);
+            border-bottom: 1px solid rgba(218, 165, 32, 0.3);
+            padding: 80px 20px;
+            margin-top: 60px;
+        }
+
+        .newsletter-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .newsletter-content h2 {
+            font-size: 2.5rem;
+            color: #DAA520;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-content p {
+            font-size: 1.2rem;
+            color: #d0d0d0;
+            margin-bottom: 40px;
+        }
+
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .bonus-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(218, 165, 32, 0.2);
+            transition: all 0.3s;
+        }
+
+        .bonus-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(218, 165, 32, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            min-width: 250px;
+            padding: 15px 25px;
+            border-radius: 30px;
+            border: 2px solid rgba(218, 165, 32, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            color: #e0e0e0;
+            font-size: 1rem;
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: #DAA520;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .newsletter-form button {
+            padding: 15px 40px;
+            border-radius: 30px;
+            border: none;
+            background: #DAA520;
+            color: #1a1f35;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background: #c99300;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(218, 165, 32, 0.4);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-size: 2.5rem;
+            color: #DAA520;
+            margin-bottom: 30px;
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #d0d0d0;
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(218, 165, 32, 0.3);
+            color: #999;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #DAA520;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .book-display {
+                flex-direction: column;
+                gap: 40px;
+                min-height: auto;
+            }
+
+            .book-cover img {
+                width: 300px;
+            }
+
+            .carousel-arrow {
+                width: 50px;
+                height: 50px;
+                font-size: 28px;
+            }
+
+            .book-info h2 {
+                font-size: 2.2rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .book-cover img {
+                width: 250px;
+            }
+
+            .book-info h2 {
+                font-size: 1.8rem;
+            }
+
+            .carousel-arrow {
+                width: 45px;
+                height: 45px;
+                font-size: 24px;
+            }
+
+            h1 {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+
+            .bonus-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>ARIANA VALE</h1>
+        <p class="tagline">Paranormal Romance for Women Who've Survived a Few Battles</p>
+    </header>
+
+    <!-- Books Carousel -->
+    <section class="books-carousel">
+        <div class="carousel-container">
+            <!-- Left Arrow -->
+            <button class="carousel-arrow left" onclick="previousBook()" aria-label="Previous book">
+                ‹
+            </button>
+
+            <!-- Book Display -->
+            <div class="book-display">
+                <div class="book-cover">
+                    <img id="currentCover" src="images/book1_cover.jpg" alt="Book Cover">
+                    <div class="series-badge" id="seriesBadge">Book 1 of 3</div>
+                </div>
+
+                <div class="book-info">
+                    <h2 id="bookTitle">The Midlife Weave</h2>
+                    <h3 id="bookSubtitle">A Urban Fantasy Novel of Second Chances and Hidden Magic</h3>
+                    
+                    <p class="book-description" id="bookDescription">
+                        At forty-two, Elena Blackwood's life is falling apart. Her law practice is drowning in debt. 
+                        Her marriage is strained. And this morning, she started seeing impossible golden threads 
+                        connecting everything around her. The threads are the Weave—and the last person with her 
+                        gift died at forty-five.
+                    </p>
+
+                    <div class="book-features" id="bookFeatures">
+                        <span class="feature">✨ Fierce 42-year-old heroine</span>
+                        <span class="feature">⚖️ Legal magic system</span>
+                        <span class="feature">💔 Slow-burn romance</span>
+                        <span class="feature">🔮 Mother-daughter magic</span>
+                    </div>
+
+                    <div class="book-actions">
+                        <a id="amazonLink" href="#" class="btn-primary" target="_blank">Get on Amazon</a>
+                        <a href="#newsletter" class="btn-secondary">Join Newsletter</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Arrow -->
+            <button class="carousel-arrow right" onclick="nextBook()" aria-label="Next book">
+                ›
+            </button>
+        </div>
+
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators">
+            <span class="indicator active" onclick="showBook(0)" aria-label="Book 1"></span>
+            <span class="indicator" onclick="showBook(1)" aria-label="Book 2"></span>
+            <span class="indicator" onclick="showBook(2)" aria-label="Book 3"></span>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section" id="newsletter">
+        <div class="newsletter-content">
+            <h2>Join the Reader Community</h2>
+            <p>Get exclusive bonus content from all three books plus early access and behind-the-scenes updates</p>
+            
+            <div class="bonus-grid">
+                <div class="bonus-item">
+                    📖 Early Access<br>
+                    <small>Read Book 2 chapters before anyone else</small>
+                </div>
+                <div class="bonus-item">
+                    ✨ Bonus Content<br>
+                    <small>Exclusive scenes from Marcus's POV</small>
+                </div>
+                <div class="bonus-item">
+                    🎁 Free Story<br>
+                    <small>Catherine Vale's Origin Story (4,000 words)</small>
+                </div>
+                <div class="bonus-item">
+                    🎬 Behind the Scenes<br>
+                    <small>Writing updates and cover reveals</small>
+                </div>
+            </div>
+            
+            <form class="newsletter-form" action="#" method="post">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Get Free Short Story</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <h2>About Ariana Vale</h2>
+        <p>
+            Ariana Vale writes paranormal romance for women who understand that magic doesn't fix everything
+            —but it sure makes life more interesting.
+        </p>
+        <p>
+            After years of wondering why fantasy heroines were always twenty-two, she decided to write the books 
+            she wanted to read: stories about fierce women in their forties who solve problems with intelligence, 
+            experience, and the occasional magical argument with reality.
+        </p>
+        <p>
+            <em>The Midlife Weave</em> is her debut novel and the first book in the Weave Arbiter series.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Ariana Vale. All rights reserved.</p>
+        <p><a href="mailto:ariana@arianavale.com">ariana@arianavale.com</a></p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Book Data - 在这里更新你的Amazon链接!
+        const books = [
+            {
+                title: "The Midlife Weave",
+                subtitle: "A Urban Fantasy Novel of Second Chances and Hidden Magic",
+                series: "Book 1 of 3",
+                cover: "images/book1_cover.jpg",
+                description: "At forty-two, Elena Blackwood's life is falling apart. Her law practice is drowning in debt. Her marriage is strained. And this morning, she started seeing impossible golden threads connecting everything around her. The threads are the Weave—and the last person with her gift died at forty-five.",
+                features: [
+                    "✨ Fierce 42-year-old heroine",
+                    "⚖️ Legal magic system",
+                    "💔 Slow-burn romance",
+                    "🔮 Mother-daughter magic"
+                ],
+                amazonLink: "https://www.amazon.com/dp/B0GPLWNB8M"  // 👈 替换这里!
+            },
+            {
+                title: "The Arbiter's Choice",
+                subtitle: "When Saving the World Requires Impossible Decisions",
+                series: "Book 2 of 3",
+                cover: "images/book2_cover.jpg",
+                description: "The gateway is opening. Eight billion lives hang in the balance. And the only way to save them requires teaching a cosmic entity about boundaries in eleven hours. Elena must enter a realm where thought is reality and prove that voluntary cooperation works at cosmic scales.",
+                features: [
+                    "🌌 Cosmic-scale stakes",
+                    "⏰ 11-hour time limit",
+                    "🧠 Boundary space journey",
+                    "💫 Ancient entity contact"
+                ],
+                amazonLink: "https://www.amazon.com/dp/B0GTYV8XHJ"  // 👈 替换这里!
+            },
+            {
+                title: "The Arbiter's Legacy",
+                subtitle: "The Final Chapter of Redemption and Choice",
+                series: "Book 3 of 3 - SERIES FINALE",
+                cover: "images/book3_cover.jpg",
+                description: "She saved the world. Now she must prove it can survive without her. Elena faces her greatest challenge: building institutions that survive their founders, training successors who lead differently, and demonstrating that retirement isn't failure—it's the final proof that the system works.",
+                features: [
+                    "🏛️ Legacy building",
+                    "👥 Succession planning",
+                    "✓ Series complete",
+                    "🎯 All questions answered"
+                ],
+                amazonLink: "https://www.amazon.com/dp/B0FWTX3FZM"  // 👈 替换这里!
+            }
+        ];
+
+        let currentBookIndex = 0;
+
+        function showBook(index) {
+            currentBookIndex = index;
+            const book = books[index];
+            
+            // 更新封面图片
+            document.getElementById('currentCover').src = book.cover;
+            document.getElementById('currentCover').alt = book.title + " Cover";
+            
+            // 更新文字内容
+            document.getElementById('bookTitle').textContent = book.title;
+            document.getElementById('bookSubtitle').textContent = book.subtitle;
+            document.getElementById('bookDescription').textContent = book.description;
+            document.getElementById('amazonLink').href = book.amazonLink;
+            
+            // 更新系列标签
+            document.getElementById('seriesBadge').textContent = book.series;
+            
+            // 更新特色标签
+            const featuresHTML = book.features
+                .map(f => `<span class="feature">${f}</span>`)
+                .join('');
+            document.getElementById('bookFeatures').innerHTML = featuresHTML;
+            
+            // 更新指示器
+            document.querySelectorAll('.indicator').forEach((ind, i) => {
+                ind.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextBook() {
+            currentBookIndex = (currentBookIndex + 1) % books.length;
+            showBook(currentBookIndex);
+        }
+
+        function previousBook() {
+            currentBookIndex = (currentBookIndex - 1 + books.length) % books.length;
+            showBook(currentBookIndex);
+        }
+
+        // 键盘导航支持
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                previousBook();
+            } else if (e.key === 'ArrowRight') {
+                nextBook();
+            }
+        });
+
+        // 初始化 - 显示第一本书
+        showBook(0);
+    </script>
+</body>
+</html>

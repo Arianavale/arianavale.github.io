@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ariana Vale - The Weave Arbiter Trilogy</title>
+    <title>Ariana Vale - The Thornfield Chronicles</title>
     <style>
         * {
             margin: 0;
@@ -249,7 +249,7 @@
         }
 
         .newsletter-content {
-            max-width: 900px;
+            max-width: 700px;
             margin: 0 auto;
             text-align: center;
         }
@@ -261,74 +261,29 @@
         }
 
         .newsletter-content p {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: #d0d0d0;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .newsletter-content .subtext {
+            font-size: 1rem;
+            color: #aaaaaa;
+            font-style: italic;
             margin-bottom: 40px;
         }
 
-        .bonus-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        .bonus-item {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid rgba(218, 165, 32, 0.2);
-            transition: all 0.3s;
-        }
-
-        .bonus-item:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(218, 165, 32, 0.4);
-            transform: translateY(-5px);
-        }
-
-        .newsletter-form {
+        /* Substack embed wrapper */
+        .substack-embed-wrapper {
             display: flex;
-            gap: 15px;
-            max-width: 600px;
-            margin: 0 auto;
-            flex-wrap: wrap;
             justify-content: center;
+            margin-top: 10px;
         }
 
-        .newsletter-form input {
-            flex: 1;
-            min-width: 250px;
-            padding: 15px 25px;
-            border-radius: 30px;
-            border: 2px solid rgba(218, 165, 32, 0.3);
-            background: rgba(255, 255, 255, 0.05);
-            color: #e0e0e0;
-            font-size: 1rem;
-        }
-
-        .newsletter-form input:focus {
-            outline: none;
-            border-color: #DAA520;
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .newsletter-form button {
-            padding: 15px 40px;
-            border-radius: 30px;
-            border: none;
-            background: #DAA520;
-            color: #1a1f35;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .newsletter-form button:hover {
-            background: #c99300;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(218, 165, 32, 0.4);
+        .substack-embed-wrapper iframe {
+            max-width: 100%;
+            border-radius: 8px;
         }
 
         /* About Section */
@@ -420,16 +375,8 @@
                 letter-spacing: 2px;
             }
 
-            .bonus-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-            }
-
-            .newsletter-form input {
-                width: 100%;
+            .substack-embed-wrapper iframe {
+                width: 100% !important;
             }
         }
     </style>
@@ -438,7 +385,7 @@
     <!-- Header -->
     <header>
         <h1>ARIANA VALE</h1>
-        <p class="tagline">Paranormal Romance for Women Who've Survived a Few Battles</p>
+        <p class="tagline">Paranormal Women's Fiction — Six Women. Six Gifts. One Ancient Moor.</p>
     </header>
 
     <!-- Books Carousel -->
@@ -446,36 +393,35 @@
         <div class="carousel-container">
             <!-- Left Arrow -->
             <button class="carousel-arrow left" onclick="previousBook()" aria-label="Previous book">
-                ‹
+                &#8249;
             </button>
 
             <!-- Book Display -->
             <div class="book-display">
                 <div class="book-cover">
                     <img id="currentCover" src="images/book1_cover.jpg" alt="Book Cover">
-                    <div class="series-badge" id="seriesBadge">Book 1 of 3</div>
+                    <div class="series-badge" id="seriesBadge">Book 1 of 6</div>
                 </div>
 
                 <div class="book-info">
-                    <h2 id="bookTitle">The Midlife Weave</h2>
-                    <h3 id="bookSubtitle">A Urban Fantasy Novel of Second Chances and Hidden Magic</h3>
-                    
+                    <h2 id="bookTitle">The Memory Keeper</h2>
+                    <h3 id="bookSubtitle">The Thornfield Chronicles · Book One</h3>
+
                     <p class="book-description" id="bookDescription">
-                        At forty-two, Elena Blackwood's life is falling apart. Her law practice is drowning in debt. 
-                        Her marriage is strained. And this morning, she started seeing impossible golden threads 
-                        connecting everything around her. The threads are the Weave—and the last person with her 
-                        gift died at forty-five.
+                        Nora Ashby inherits a house on the Yorkshire moors and a gift she has been
+                        managing as a liability for nineteen years. In Thornfield-on-Moor, she finds
+                        the one place that has been waiting for exactly what she is.
                     </p>
 
                     <div class="book-features" id="bookFeatures">
-                        <span class="feature">✨ Fierce 42-year-old heroine</span>
-                        <span class="feature">⚖️ Legal magic system</span>
-                        <span class="feature">💔 Slow-burn romance</span>
-                        <span class="feature">🔮 Mother-daughter magic</span>
+                        <span class="feature">✦ Suspended surgeon</span>
+                        <span class="feature">🌿 Yorkshire moors</span>
+                        <span class="feature">✦ Tactile channel</span>
+                        <span class="feature">🏡 Found community</span>
                     </div>
 
                     <div class="book-actions">
-                        <a id="amazonLink" href="#" class="btn-primary" target="_blank">Get on Amazon</a>
+                        <a id="amazonLink" href="https://www.amazon.com/dp/B0GGYM8XX1" class="btn-primary" target="_blank">Read on Amazon</a>
                         <a href="#newsletter" class="btn-secondary">Join Newsletter</a>
                     </div>
                 </div>
@@ -483,7 +429,7 @@
 
             <!-- Right Arrow -->
             <button class="carousel-arrow right" onclick="nextBook()" aria-label="Next book">
-                ›
+                &#8250;
             </button>
         </div>
 
@@ -492,38 +438,40 @@
             <span class="indicator active" onclick="showBook(0)" aria-label="Book 1"></span>
             <span class="indicator" onclick="showBook(1)" aria-label="Book 2"></span>
             <span class="indicator" onclick="showBook(2)" aria-label="Book 3"></span>
+            <span class="indicator" onclick="showBook(3)" aria-label="Book 4"></span>
+            <span class="indicator" onclick="showBook(4)" aria-label="Book 5"></span>
+            <span class="indicator" onclick="showBook(5)" aria-label="Book 6"></span>
         </div>
     </section>
 
     <!-- Newsletter Section -->
     <section class="newsletter-section" id="newsletter">
         <div class="newsletter-content">
-            <h2>Join the Reader Community</h2>
-            <p>Get exclusive bonus content from all three books plus early access and behind-the-scenes updates</p>
-            
-            <div class="bonus-grid">
-                <div class="bonus-item">
-                    📖 Early Access<br>
-                    <small>Read Book 2 chapters before anyone else</small>
-                </div>
-                <div class="bonus-item">
-                    ✨ Bonus Content<br>
-                    <small>Exclusive scenes from Marcus's POV</small>
-                </div>
-                <div class="bonus-item">
-                    🎁 Free Story<br>
-                    <small>Catherine Vale's Origin Story (4,000 words)</small>
-                </div>
-                <div class="bonus-item">
-                    🎬 Behind the Scenes<br>
-                    <small>Writing updates and cover reveals</small>
-                </div>
+            <h2>Stay in the Practice</h2>
+            <p>
+                The Thornfield Chronicles is complete. The next series is coming.
+            </p>
+            <p>
+                Join the reader list for early chapters, behind-the-scenes notes,
+                and news about what comes next — before anyone else.
+            </p>
+            <p class="subtext">No spam. No pressure. Just the writing.</p>
+
+            <!-- Substack Embed -->
+            <!-- 
+                将下面 YOUR_SUBSTACK_EMBED_CODE_HERE 替换为你从 Substack Settings > Growth 复制的完整 iframe 代码
+                例如：
+                <iframe src="https://arianavale.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+            -->
+            <div class="substack-embed-wrapper">
+                <iframe src="https://arianavale.substack.com/embed" 
+                        width="480" 
+                        height="320" 
+                        style="border:1px solid rgba(218,165,32,0.3); background:rgba(255,255,255,0.05); border-radius:8px;" 
+                        frameborder="0" 
+                        scrolling="no">
+                </iframe>
             </div>
-            
-            <form class="newsletter-form" action="#" method="post">
-                <input type="email" placeholder="Enter your email address" required>
-                <button type="submit">Get Free Short Story</button>
-            </form>
         </div>
     </section>
 
@@ -531,70 +479,84 @@
     <section class="about-section">
         <h2>About Ariana Vale</h2>
         <p>
-            Ariana Vale writes paranormal romance for women who understand that magic doesn't fix everything
-            —but it sure makes life more interesting.
+            Ariana Vale writes paranormal women's fiction about women over forty who discover
+            that what they have been calling intuition, sensitivity, or professional instinct
+            has always been something else — something older, and more specific.
         </p>
         <p>
-            After years of wondering why fantasy heroines were always twenty-two, she decided to write the books 
-            she wanted to read: stories about fierce women in their forties who solve problems with intelligence, 
-            experience, and the occasional magical argument with reality.
+            The Thornfield Chronicles follows six women who arrive in a North Yorkshire village
+            in the aftermath of professional crises, each carrying a gift she has been managing
+            as a liability. Together, they find the one place that has been waiting for exactly
+            what they are.
         </p>
         <p>
-            <em>The Midlife Weave</em> is her debut novel and the first book in the Weave Arbiter series.
+            <em>The series is now complete. All six books are available on Amazon and Kindle Unlimited.</em>
         </p>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>© 2025 Ariana Vale. All rights reserved.</p>
+        <p>© 2026 Ariana Vale. All rights reserved.</p>
         <p><a href="mailto:ariana@arianavale.com">ariana@arianavale.com</a></p>
+        <p><a href="https://arianavale.substack.com" target="_blank">Newsletter</a></p>
     </footer>
 
     <!-- JavaScript -->
     <script>
-        // Book Data - 在这里更新你的Amazon链接!
         const books = [
             {
-                title: "The Midlife Weave",
-                subtitle: "A Urban Fantasy Novel of Second Chances and Hidden Magic",
-                series: "Book 1 of 3",
+                title: "The Memory Keeper",
+                subtitle: "The Thornfield Chronicles · Book One",
+                series: "Book 1 of 6",
                 cover: "images/book1_cover.jpg",
-                description: "At forty-two, Elena Blackwood's life is falling apart. Her law practice is drowning in debt. Her marriage is strained. And this morning, she started seeing impossible golden threads connecting everything around her. The threads are the Weave—and the last person with her gift died at forty-five.",
-                features: [
-                    "✨ Fierce 42-year-old heroine",
-                    "⚖️ Legal magic system",
-                    "💔 Slow-burn romance",
-                    "🔮 Mother-daughter magic"
-                ],
-                amazonLink: "https://www.amazon.com/dp/B0GPLWNB8M"  // 👈 替换这里!
+                description: "Nora Ashby inherits a house on the Yorkshire moors and a gift she has been managing as a liability for nineteen years. In Thornfield-on-Moor, she finds the one place that has been waiting for exactly what she is.",
+                features: ["✦ Suspended surgeon", "🌿 Yorkshire moors", "✦ Tactile channel", "🏡 Found community"],
+                amazonLink: "https://www.amazon.com/dp/B0GGYM8XX1"
             },
             {
-                title: "The Arbiter's Choice",
-                subtitle: "When Saving the World Requires Impossible Decisions",
-                series: "Book 2 of 3",
+                title: "The Storm Caller",
+                subtitle: "The Thornfield Chronicles · Book Two",
+                series: "Book 2 of 6",
                 cover: "images/book2_cover.jpg",
-                description: "The gateway is opening. Eight billion lives hang in the balance. And the only way to save them requires teaching a cosmic entity about boundaries in eleven hours. Elena must enter a realm where thought is reality and prove that voluntary cooperation works at cosmic scales.",
-                features: [
-                    "🌌 Cosmic-scale stakes",
-                    "⏰ 11-hour time limit",
-                    "🧠 Boundary space journey",
-                    "💫 Ancient entity contact"
-                ],
-                amazonLink: "https://www.amazon.com/dp/B0GTYV8XHJ"  // 👈 替换这里!
+                description: "Vera Hendricks arrives in Thornfield with thirty-one years of atmospheric data and a channel she has spent her career trying to make unnecessary. The data has always been pointing here.",
+                features: ["✦ Disgraced meteorologist", "🌩️ Atmospheric channel", "📊 Thirty-one years of data", "🌿 Yorkshire moors"],
+                amazonLink: "https://www.amazon.com/dp/B0DB2JPQX4"
             },
             {
-                title: "The Arbiter's Legacy",
-                subtitle: "The Final Chapter of Redemption and Choice",
-                series: "Book 3 of 3 - SERIES FINALE",
+                title: "The Truth Weaver",
+                subtitle: "The Thornfield Chronicles · Book Three",
+                series: "Book 3 of 6",
                 cover: "images/book3_cover.jpg",
-                description: "She saved the world. Now she must prove it can survive without her. Elena faces her greatest challenge: building institutions that survive their founders, training successors who lead differently, and demonstrating that retirement isn't failure—it's the final proof that the system works.",
-                features: [
-                    "🏛️ Legacy building",
-                    "👥 Succession planning",
-                    "✓ Series complete",
-                    "🎯 All questions answered"
-                ],
-                amazonLink: "https://www.amazon.com/dp/B0FWTX3FZM"  // 👈 替换这里!
+                description: "Rowan Adeyemi has been following a compass for four years without knowing what it was pointing at. A fired journalist with a gift for the weight of true things, she arrives in Thornfield and finds the story she was always meant to write.",
+                features: ["✦ Fired journalist", "📝 Linguistic channel", "✦ Truth-weight gift", "🌿 Yorkshire moors"],
+                amazonLink: "https://www.amazon.com/dp/B0GX2VMS52"
+            },
+            {
+                title: "The Bone Reader",
+                subtitle: "The Thornfield Chronicles · Book Four",
+                series: "Book 4 of 6",
+                cover: "images/book4_cover.jpg",
+                description: "Sylvie Okafor comes to Thornfield to identify seventeen sets of Victorian remains found beneath Ashveil Academy. She has been wearing gloves for nineteen years. In this place, she finally understands why.",
+                features: ["✦ Forensic anthropologist", "🦴 Forensic channel", "🏛️ Victorian cold case", "🌿 Yorkshire moors"],
+                amazonLink: "https://www.amazon.com/dp/B0GX32MS5H"
+            },
+            {
+                title: "The Dream Architect",
+                subtitle: "The Thornfield Chronicles · Book Five",
+                series: "Book 5 of 6",
+                cover: "images/book5_cover.jpg",
+                description: "Imogen Patel arrives to restore Ashveil Academy and discovers that the building has been waiting for her. A restoration architect with a spatial channel she has called her professional eye — here, it is finally called by its correct name.",
+                features: ["✦ Restoration architect", "🏛️ Spatial channel", "✦ Academy restoration", "🌿 Yorkshire moors"],
+                amazonLink: "https://www.amazon.com/dp/B0GGYM8XX1"
+            },
+            {
+                title: "The Veil Keeper",
+                subtitle: "The Thornfield Chronicles · Book Six",
+                series: "Book 6 of 6 — Series Complete",
+                cover: "images/book6_cover.jpg",
+                description: "Agnes Llewellyn has been at the water since 1879. She is one hundred and forty-seven years old, and she has been waiting for the community to arrive. Now she tells the truth about why.",
+                features: ["✦ Agnes's story", "💧 The ancient Mere", "✦ Series finale", "🌿 Yorkshire moors"],
+                amazonLink: "https://www.amazon.com/dp/B0GGYM8XX1"
             }
         ];
 
@@ -603,27 +565,20 @@
         function showBook(index) {
             currentBookIndex = index;
             const book = books[index];
-            
-            // 更新封面图片
+
             document.getElementById('currentCover').src = book.cover;
             document.getElementById('currentCover').alt = book.title + " Cover";
-            
-            // 更新文字内容
             document.getElementById('bookTitle').textContent = book.title;
             document.getElementById('bookSubtitle').textContent = book.subtitle;
             document.getElementById('bookDescription').textContent = book.description;
             document.getElementById('amazonLink').href = book.amazonLink;
-            
-            // 更新系列标签
             document.getElementById('seriesBadge').textContent = book.series;
-            
-            // 更新特色标签
+
             const featuresHTML = book.features
                 .map(f => `<span class="feature">${f}</span>`)
                 .join('');
             document.getElementById('bookFeatures').innerHTML = featuresHTML;
-            
-            // 更新指示器
+
             document.querySelectorAll('.indicator').forEach((ind, i) => {
                 ind.classList.toggle('active', i === index);
             });
@@ -639,16 +594,11 @@
             showBook(currentBookIndex);
         }
 
-        // 键盘导航支持
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'ArrowLeft') {
-                previousBook();
-            } else if (e.key === 'ArrowRight') {
-                nextBook();
-            }
+            if (e.key === 'ArrowLeft') previousBook();
+            else if (e.key === 'ArrowRight') nextBook();
         });
 
-        // 初始化 - 显示第一本书
         showBook(0);
     </script>
 </body>

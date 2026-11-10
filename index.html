@@ -1,605 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ariana Vale - The Ashveil Mere Series</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ariana Vale | Literary Paranormal Women’s Fiction</title>
+<meta name="description" content="Ariana Vale writes literary paranormal women’s fiction about women over forty, overlooked work, unusual gifts, and the relief of being accurately perceived. Newest series: The Marian Teague Mysteries, complete in six books.">
+<meta property="og:title" content="Ariana Vale | Literary Paranormal Women’s Fiction">
+<meta property="og:description" content="The Marian Teague Mysteries: six winters, six closed places, one housekeeper’s eye. Complete in six books.">
+<meta property="og:image" content="img/hero.jpg">
+<meta name="theme-color" content="#050b17">
+<style>
+@font-face{font-family:"Cinzel";font-weight:400;font-display:swap;src:url(fonts/cinzel-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Cinzel";font-weight:600;font-display:swap;src:url(fonts/cinzel-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-weight:400;font-style:normal;font-display:swap;src:url(fonts/cormorant-garamond-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-weight:500;font-style:normal;font-display:swap;src:url(fonts/cormorant-garamond-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-weight:400;font-style:italic;font-display:swap;src:url(fonts/cormorant-garamond-latin-400-italic.woff2) format("woff2")}
 
-        body {
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #1a1f35 0%, #2c3e50 100%);
-            color: #e0e0e0;
-            line-height: 1.6;
-        }
+:root{
+  --bg:#050b17; --bg2:#0b1626; --panel:#0f1d33; --line:rgba(201,165,106,.28);
+  --cream:#f2e6cc; --text:#d6d9de; --muted:#9aa6b8; --amber:#e8b068; --gold:#c9a56a;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif; --caps:"Cinzel",Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--serif);font-size:20px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--amber);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.caps{font-family:var(--caps);letter-spacing:.18em;text-transform:uppercase}
+h1,h2,h3{font-family:var(--caps);font-weight:600;color:var(--cream);letter-spacing:.06em;line-height:1.25}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
 
-        /* Header */
-        header {
-            text-align: center;
-            padding: 60px 20px 40px;
-            border-bottom: 1px solid rgba(218, 165, 32, 0.3);
-        }
+/* nav */
+nav{position:absolute;top:0;left:0;right:0;z-index:5;padding:20px 0}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{font-family:var(--caps);font-weight:600;letter-spacing:.3em;color:var(--cream);font-size:15px}
+.brand:hover{text-decoration:none}
+nav ul{display:flex;gap:26px;list-style:none;flex-wrap:wrap}
+nav li a{font-family:var(--caps);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);opacity:.85}
+nav li a:hover{opacity:1;text-decoration:none;color:var(--amber)}
 
-        h1 {
-            font-size: 3.5rem;
-            color: #DAA520;
-            letter-spacing: 4px;
-            margin-bottom: 15px;
-            font-weight: normal;
-        }
+/* hero */
+.hero{position:relative;min-height:640px;display:flex;align-items:center;background:#050b17 url(img/hero.jpg) right center/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,11,23,.97) 0%,rgba(5,11,23,.86) 40%,rgba(5,11,23,.15) 80%,rgba(5,11,23,0) 100%)}
+.hero .wrap{position:relative;padding-top:110px;padding-bottom:70px;width:100%}
+.hero .kicker{font-family:var(--caps);font-size:13px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase;margin-bottom:18px}
+.hero h1{font-size:clamp(30px,5vw,50px);max-width:15em;margin-bottom:22px}
+.hero p.lead{max-width:30em;font-size:23px;font-style:italic;color:var(--cream);margin-bottom:34px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;font-family:var(--caps);font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:15px 28px;border:1px solid var(--gold);color:var(--cream);transition:.2s}
+.btn:hover{text-decoration:none;background:rgba(232,176,104,.14);border-color:var(--amber)}
+.btn.primary{background:var(--amber);color:#14100a;border-color:var(--amber);font-weight:600}
+.btn.primary:hover{background:#f0be7e}
 
-        .tagline {
-            font-size: 1.2rem;
-            font-style: italic;
-            color: #cccccc;
-        }
+section{padding:84px 0}
+.eyebrow{font-family:var(--caps);font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.rule{width:56px;height:1px;background:var(--gold);margin:18px 0 26px}
+h2{font-size:clamp(24px,3.4vw,34px)}
+.center{text-align:center}.center .rule{margin-left:auto;margin-right:auto}
 
-        /* Books Carousel Section */
-        .books-carousel {
-            padding: 80px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+/* meet */
+.meet{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.meet .grid{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:56px;align-items:center}
+.meet img{border-radius:3px;box-shadow:0 24px 60px rgba(0,0,0,.55)}
+.meet p{margin-bottom:18px}
+.meet .tagline{font-style:italic;color:var(--cream);font-size:22px}
 
-        .carousel-container {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            position: relative;
-        }
+/* books */
+.books-head{max-width:640px;margin:0 auto 46px}
+.books-head p{color:var(--muted)}
+.books{display:grid;grid-template-columns:repeat(3,1fr);gap:34px 28px}
+.book{display:flex;flex-direction:column}
+.cover{position:relative;aspect-ratio:2/3;background:var(--panel);border-radius:3px;overflow:hidden;box-shadow:0 18px 44px rgba(0,0,0,.5);transition:transform .25s}
+.book:hover .cover{transform:translateY(-4px)}
+.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cover img.fit{object-fit:contain;background:#07101e}
+.cover .ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;align-items:center;text-align:center;padding:26px 20px;background:linear-gradient(160deg,#0a1424,#15294a 60%,#2a3f5c)}
+.cover .ph small{font-family:var(--caps);font-size:9px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.cover .ph b{font-family:var(--caps);font-weight:600;color:var(--cream);font-size:22px;line-height:1.3;letter-spacing:.08em}
+.cover .ph i{width:12px;height:16px;background:#ffc872;box-shadow:0 0 22px 8px rgba(255,174,69,.55)}
+.cover .ph em{font-family:var(--caps);font-style:normal;font-size:11px;letter-spacing:.24em;color:var(--cream)}
+.book .num{font-family:var(--caps);font-size:11px;letter-spacing:.24em;color:var(--gold);margin:18px 0 4px;text-transform:uppercase}
+.book h3{font-size:16px;margin-bottom:4px}
+.book .where{font-style:italic;color:var(--amber);font-size:18px;margin-bottom:10px}
+.book p{font-size:18px;color:var(--text);margin-bottom:16px;flex:1}
+.book .link{font-family:var(--caps);font-size:11px;letter-spacing:.2em;text-transform:uppercase}
 
-        .book-display {
-            display: flex;
-            gap: 60px;
-            align-items: center;
-            flex: 1;
-            min-height: 600px;
-        }
+/* order strip */
+.order{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:56px 0}
+.strip{display:grid;grid-template-columns:repeat(6,1fr);margin-top:30px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.strip div{text-align:center;padding:22px 8px;border-left:1px solid var(--line)}
+.strip div:first-child{border-left:0}
+.strip .win{display:block;width:10px;height:14px;background:#ffc872;margin:0 auto 12px;box-shadow:0 0 18px 6px rgba(255,174,69,.45)}
+.strip b{display:block;font-family:var(--caps);font-weight:600;color:var(--cream);font-size:12px;letter-spacing:.1em;line-height:1.4;margin-bottom:4px}
+.strip span{font-style:italic;color:var(--gold);font-size:16px}
+.order p.note{max-width:640px;margin:26px auto 0;text-align:center;color:var(--muted)}
 
-        .book-cover {
-            position: relative;
-            flex-shrink: 0;
-        }
+/* more series */
+.series{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+.series article{border:1px solid var(--line);padding:26px 24px;background:linear-gradient(180deg,rgba(15,29,51,.7),rgba(15,29,51,.25))}
+.series h3{font-size:15px;margin-bottom:8px}
+.series p{font-size:18px;color:var(--text)}
+.more{text-align:center;margin-top:36px}
 
-        .book-cover img {
-            width: 350px;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease;
-        }
+/* newsletter */
+.news{background:linear-gradient(180deg,var(--bg2),#0a1220);border-top:1px solid var(--line);text-align:center}
+.news .rule{margin-left:auto;margin-right:auto}
+.news p{max-width:600px;margin:0 auto 28px}
 
-        .book-cover img:hover {
-            transform: translateY(-10px);
-        }
+/* about */
+.about .grid{display:grid;grid-template-columns:1fr;max-width:760px;margin:0 auto}
+.about p{margin-bottom:20px}
+.about .sig{font-family:var(--caps);letter-spacing:.2em;color:var(--cream);font-size:14px}
 
-        .series-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(218, 165, 32, 0.95);
-            color: #1a1f35;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 14px;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(218, 165, 32, 0.4);
-        }
+footer{padding:44px 0;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:16px}
+footer .links{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+footer .links a{font-family:var(--caps);font-size:12px;letter-spacing:.2em;text-transform:uppercase}
 
-        .book-info {
-            flex: 1;
-        }
-
-        .book-info h2 {
-            font-size: 3rem;
-            color: #DAA520;
-            margin-bottom: 15px;
-            line-height: 1.2;
-        }
-
-        .book-info h3 {
-            font-size: 1.3rem;
-            color: #b8b8b8;
-            font-style: italic;
-            font-weight: normal;
-            margin-bottom: 30px;
-        }
-
-        .book-description {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #d0d0d0;
-            margin-bottom: 35px;
-        }
-
-        .book-features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 35px;
-        }
-
-        .feature {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 12px 20px;
-            border-radius: 25px;
-            font-size: 0.95rem;
-            color: #DAA520;
-            border: 1px solid rgba(218, 165, 32, 0.2);
-            transition: all 0.3s;
-        }
-
-        .feature:hover {
-            background: rgba(218, 165, 32, 0.15);
-            border-color: rgba(218, 165, 32, 0.4);
-        }
-
-        .book-actions {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary, .btn-secondary {
-            padding: 15px 35px;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: inline-block;
-            cursor: pointer;
-            border: 2px solid;
-        }
-
-        .btn-primary {
-            background: #DAA520;
-            color: #1a1f35;
-            border-color: #DAA520;
-            font-weight: bold;
-        }
-
-        .btn-primary:hover {
-            background: #c99300;
-            border-color: #c99300;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(218, 165, 32, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: #DAA520;
-            border-color: #DAA520;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(218, 165, 32, 0.1);
-            transform: translateY(-2px);
-        }
-
-        /* Carousel Arrows */
-        .carousel-arrow {
-            background: rgba(218, 165, 32, 0.15);
-            border: 2px solid #DAA520;
-            color: #DAA520;
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            font-size: 36px;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .carousel-arrow:hover {
-            background: #DAA520;
-            color: #1a1f35;
-            transform: scale(1.1);
-            box-shadow: 0 8px 25px rgba(218, 165, 32, 0.4);
-        }
-
-        .carousel-arrow:active {
-            transform: scale(1.05);
-        }
-
-        /* Carousel Indicators */
-        .carousel-indicators {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 50px;
-        }
-
-        .indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.25);
-            cursor: pointer;
-            transition: all 0.3s;
-            border: 1px solid transparent;
-        }
-
-        .indicator.active {
-            background: #DAA520;
-            width: 45px;
-            border-radius: 6px;
-            box-shadow: 0 0 15px rgba(218, 165, 32, 0.6);
-        }
-
-        .indicator:hover:not(.active) {
-            background: rgba(218, 165, 32, 0.5);
-            transform: scale(1.2);
-        }
-
-        /* Newsletter Section */
-        .newsletter-section {
-            background: rgba(255, 255, 255, 0.03);
-            border-top: 1px solid rgba(218, 165, 32, 0.3);
-            border-bottom: 1px solid rgba(218, 165, 32, 0.3);
-            padding: 80px 20px;
-            margin-top: 60px;
-        }
-
-        .newsletter-content {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .newsletter-content h2 {
-            font-size: 2.5rem;
-            color: #DAA520;
-            margin-bottom: 20px;
-        }
-
-        .newsletter-content p {
-            font-size: 1.15rem;
-            color: #d0d0d0;
-            margin-bottom: 15px;
-            line-height: 1.8;
-        }
-
-        .newsletter-content .subtext {
-            font-size: 1rem;
-            color: #aaaaaa;
-            font-style: italic;
-            margin-bottom: 40px;
-        }
-
-        /* Substack embed wrapper */
-        .substack-embed-wrapper {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
-
-        .substack-embed-wrapper iframe {
-            max-width: 100%;
-            border-radius: 8px;
-        }
-
-        /* About Section */
-        .about-section {
-            padding: 80px 20px;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .about-section h2 {
-            font-size: 2.5rem;
-            color: #DAA520;
-            margin-bottom: 30px;
-        }
-
-        .about-section p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #d0d0d0;
-            margin-bottom: 20px;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            border-top: 1px solid rgba(218, 165, 32, 0.3);
-            color: #999;
-        }
-
-        footer p {
-            margin-bottom: 10px;
-        }
-
-        footer a {
-            color: #DAA520;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 968px) {
-            .book-display {
-                flex-direction: column;
-                gap: 40px;
-                min-height: auto;
-            }
-
-            .book-cover img {
-                width: 300px;
-            }
-
-            .carousel-arrow {
-                width: 50px;
-                height: 50px;
-                font-size: 28px;
-            }
-
-            .book-info h2 {
-                font-size: 2.2rem;
-            }
-
-            h1 {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .book-cover img {
-                width: 250px;
-            }
-
-            .book-info h2 {
-                font-size: 1.8rem;
-            }
-
-            .carousel-arrow {
-                width: 45px;
-                height: 45px;
-                font-size: 24px;
-            }
-
-            h1 {
-                font-size: 2rem;
-                letter-spacing: 2px;
-            }
-
-            .substack-embed-wrapper iframe {
-                width: 100% !important;
-            }
-        }
-    </style>
+@media (max-width:860px){
+  body{font-size:19px}
+  nav ul{gap:8px 18px;justify-content:center}
+  .hero .wrap{padding-top:150px}
+  .hero{min-height:560px;background-position:70% center}
+  .hero::before{background:linear-gradient(180deg,rgba(5,11,23,.55) 0%,rgba(5,11,23,.9) 100%)}
+  .meet .grid{grid-template-columns:1fr;gap:34px}
+  .meet .cov{max-width:240px;margin:0 auto}
+  .books{grid-template-columns:repeat(2,1fr)}
+  .strip{grid-template-columns:repeat(3,1fr)}
+  .strip div:nth-child(4){border-left:0}
+  .strip div:nth-child(n+4){border-top:1px solid var(--line)}
+  .series{grid-template-columns:1fr}
+  section{padding:64px 0}
+}
+@media (max-width:520px){
+  .wrap{padding:0 16px}
+  nav .wrap{justify-content:center}
+  nav ul{justify-content:center}
+  .hero .wrap{padding-top:160px}
+  .books{grid-template-columns:1fr;max-width:320px;margin:0 auto}
+  .strip{grid-template-columns:repeat(2,1fr)}
+  .strip div:nth-child(n){border-left:1px solid var(--line);border-top:1px solid var(--line)}
+  .strip div:nth-child(odd){border-left:0}
+  .strip div:nth-child(-n+2){border-top:0}
+  .btn{width:100%;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cover{transition:none}}
+</style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <h1>ARIANA VALE</h1>
-        <p class="tagline">Paranormal Women's Fiction — Six Women. Six Gifts. One Ancient Moor.</p>
-    </header>
 
-    <!-- Books Carousel -->
-    <section class="books-carousel">
-        <div class="carousel-container">
-            <!-- Left Arrow -->
-            <button class="carousel-arrow left" onclick="previousBook()" aria-label="Previous book">
-                &#8249;
-            </button>
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top">ARIANA VALE</a>
+    <ul>
+      <li><a href="#books">The Books</a></li>
+      <li><a href="#more">More Series</a></li>
+      <li><a href="#news">Newsletter</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </div>
+</nav>
 
-            <!-- Book Display -->
-            <div class="book-display">
-                <div class="book-cover">
-                    <img id="currentCover" src="images/book1_cover.jpg" alt="Book Cover">
-                    <div class="series-badge" id="seriesBadge">Book 1 of 6</div>
-                </div>
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="kicker">The Marian Teague Mysteries · Complete in six books</p>
+    <h1>Six winters. Six closed places. One housekeeper’s eye.</h1>
+    <p class="lead">Marian Teague has no supernatural gift. She counts the rooms, the linen and the keys, and the buildings do the haunting.</p>
+    <div class="btns">
+      <a class="btn primary" href="https://www.amazon.com/dp/B0HNJDY1MB" target="_blank" rel="noopener">Start with Book One</a>
+      <a class="btn" href="#books">See all six books</a>
+    </div>
+  </div>
+</header>
 
-                <div class="book-info">
-                    <h2 id="bookTitle">The Memory Keeper</h2>
-                    <h3 id="bookSubtitle">The Ashveil Mere Series · Book One</h3>
+<main>
 
-                    <p class="book-description" id="bookDescription">
-                        Nora Ashby inherits a house on the Yorkshire moors and a gift she has been
-                        managing as a liability for nineteen years. In Thornfield-on-Moor, she finds
-                        the one place that has been waiting for exactly what she is.
-                    </p>
+<section class="meet" aria-labelledby="meet-h">
+  <div class="wrap grid">
+    <div class="cov">
+      <a href="https://www.amazon.com/dp/B0HNJDY1MB" target="_blank" rel="noopener">
+        <img src="img/book1.jpg" width="600" height="959" alt="Cover of The Room Not on the Inventory, Book One of The Marian Teague Mysteries, by Ariana Vale">
+      </a>
+    </div>
+    <div>
+      <p class="eyebrow">The series</p>
+      <h2 id="meet-h">Meet Marian Teague</h2>
+      <div class="rule"></div>
+      <p class="tagline">The housekeeper who counts what others overlook.</p>
+      <p>Marian spent twenty years as head of housekeeping at a grand hotel, until the hotel was sold and her job went with it. Now she takes the work nobody else wants: minding closed properties through the winter, when the guests are gone and the road may not stay open.</p>
+      <p>She knows when a bed has been turned down by someone who is not there. The buildings carry the strangeness. Marian does the proving, with measurements, paper, and the testimony of people who have waited years to be asked.</p>
+      <p>Every case closes with evidence, never a vision.</p>
+    </div>
+  </div>
+</section>
 
-                    <div class="book-features" id="bookFeatures">
-                        <span class="feature">✦ Suspended surgeon</span>
-                        <span class="feature">🌿 Yorkshire moors</span>
-                        <span class="feature">✦ Tactile channel</span>
-                        <span class="feature">🏡 Found community</span>
-                    </div>
+<section id="books" aria-labelledby="books-h">
+  <div class="wrap">
+    <div class="books-head center">
+      <p class="eyebrow">Read them in order</p>
+      <h2 id="books-h">The Marian Teague Mysteries</h2>
+      <div class="rule"></div>
+      <p>Every case closes within its own book. The thread that runs through all six is best followed from the start, at Tolt Head.</p>
+    </div>
 
-                    <div class="book-actions">
-                        <a id="amazonLink" href="https://www.amazon.com/dp/B0GGYM8XX1" class="btn-primary" target="_blank">Read on Amazon</a>
-                        <a href="#newsletter" class="btn-secondary">Join Newsletter</a>
-                    </div>
-                </div>
-            </div>
+    <div class="books">
+      <article class="book">
+        <a class="cover" href="https://www.amazon.com/dp/B0HNJDY1MB" target="_blank" rel="noopener" aria-label="The Room Not on the Inventory on Amazon">
+          <img class="fit" src="img/book1.jpg" width="600" height="959" loading="lazy" alt="Cover of The Room Not on the Inventory">
+        </a>
+        <p class="num">Book One</p>
+        <h3>The Room Not on the Inventory</h3>
+        <p class="where">Tolt Head Light Inn, Newfoundland</p>
+        <p>A cart wheel rolls along an empty corridor every night at the same minute. Marian measures the corridor and finds it is too short.</p>
+        <a class="link" href="https://www.amazon.com/dp/B0HNJDY1MB" target="_blank" rel="noopener">View on Amazon</a>
+      </article>
 
-            <!-- Right Arrow -->
-            <button class="carousel-arrow right" onclick="nextBook()" aria-label="Next book">
-                &#8250;
-            </button>
-        </div>
+      <article class="book">
+        <a class="cover" href="https://www.amazon.com/dp/B0HNMWKZNR" target="_blank" rel="noopener" aria-label="The Guest Not on the Inventory on Amazon">
+          <img src="img/book2.jpg" width="600" height="900" loading="lazy" alt="Cover of The Guest Not on the Inventory">
+        </a>
+        <p class="num">Book Two</p>
+        <h3>The Guest Not on the Inventory</h3>
+        <p class="where">Cairn Lodge, Canadian Rockies</p>
+        <p>A wing has been locked since spring, and the register holds the name of a winter guest nobody saw.</p>
+        <a class="link" href="https://www.amazon.com/dp/B0HNMWKZNR" target="_blank" rel="noopener">View on Amazon</a>
+      </article>
 
-        <!-- Carousel Indicators -->
-        <div class="carousel-indicators">
-            <span class="indicator active" onclick="showBook(0)" aria-label="Book 1"></span>
-            <span class="indicator" onclick="showBook(1)" aria-label="Book 2"></span>
-            <span class="indicator" onclick="showBook(2)" aria-label="Book 3"></span>
-            <span class="indicator" onclick="showBook(3)" aria-label="Book 4"></span>
-            <span class="indicator" onclick="showBook(4)" aria-label="Book 5"></span>
-            <span class="indicator" onclick="showBook(5)" aria-label="Book 6"></span>
-        </div>
-    </section>
+      <article class="book">
+        <a class="cover" href="https://www.amazon.com/dp/B0HPJWFY6Z" target="_blank" rel="noopener" aria-label="The Boat Not on the Inventory on Amazon">
+          <img src="img/book3.jpg" width="600" height="900" loading="lazy" alt="Cover of The Boat Not on the Inventory">
+        </a>
+        <p class="num">Book Three</p>
+        <h3>The Boat Not on the Inventory</h3>
+        <p class="where">Pellam Island House, Lake Superior</p>
+        <p>An island hotel waits out the ice, and a wet boat sits in the boathouse where nothing should have moved.</p>
+        <a class="link" href="https://www.amazon.com/dp/B0HPJWFY6Z" target="_blank" rel="noopener">View on Amazon</a>
+      </article>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter-section" id="newsletter">
-        <div class="newsletter-content">
-            <h2>Stay in the Practice</h2>
-            <p>
-                The Ashveil Mere Series is complete. The next series is coming.
-            </p>
-            <p>
-                Join the reader list for early chapters, behind-the-scenes notes,
-                and news about what comes next — before anyone else.
-            </p>
-            <p class="subtext">No spam. No pressure. Just the writing.</p>
+      <article class="book">
+        <a class="cover" href="https://www.amazon.com/dp/B0HPP4DLJB" target="_blank" rel="noopener" aria-label="The Ward Not on the Inventory on Amazon">
+          <img src="img/book4.jpg" width="600" height="900" loading="lazy" alt="Cover of The Ward Not on the Inventory">
+        </a>
+        <p class="num">Book Four</p>
+        <h3>The Ward Not on the Inventory</h3>
+        <p class="where">Domaine des Érables, Quebec</p>
+        <p>A former sanatorium turned retreat stands empty before the first blizzard, with frost on the cure porch and a resident gone.</p>
+        <a class="link" href="https://www.amazon.com/dp/B0HPP4DLJB" target="_blank" rel="noopener">View on Amazon</a>
+      </article>
 
-            <!-- Substack Embed -->
-            <!-- 
-                将下面 YOUR_SUBSTACK_EMBED_CODE_HERE 替换为你从 Substack Settings > Growth 复制的完整 iframe 代码
-                例如：
-                <iframe src="https://arianavale.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
-            -->
-            <div class="substack-embed-wrapper">
-                <iframe src="https://arianavale.substack.com/embed" 
-                        width="480" 
-                        height="320" 
-                        style="border:1px solid rgba(218,165,32,0.3); background:rgba(255,255,255,0.05); border-radius:8px;" 
-                        frameborder="0" 
-                        scrolling="no">
-                </iframe>
-            </div>
-        </div>
-    </section>
+      <article class="book">
+        <a class="cover" href="https://www.amazon.com/dp/B0HQCQQHC8" target="_blank" rel="noopener" aria-label="The Bell Not on the Inventory on Amazon">
+          <div class="ph"><small>The Marian Teague Mysteries<br>Book Five</small><b>THE BELL<br>NOT ON THE<br>INVENTORY</b><i></i><em>ARIANA VALE</em></div>
+          <img src="img/book5.jpg" width="600" height="900" loading="lazy" alt="Cover of The Bell Not on the Inventory" onerror="this.remove()">
+        </a>
+        <p class="num">Book Five</p>
+        <h3>The Bell Not on the Inventory</h3>
+        <p class="where">Glen Corrach, Scottish Highlands</p>
+        <p>The chapel bell has had no rope for decades. In a lodge cut off by weather, someone is ringing it.</p>
+        <a class="link" href="https://www.amazon.com/dp/B0HQCQQHC8" target="_blank" rel="noopener">View on Amazon</a>
+      </article>
 
-    <!-- About Section -->
-    <section class="about-section">
-        <h2>About Ariana Vale</h2>
-        <p>
-            Ariana Vale writes paranormal women's fiction about women over forty who discover
-            that what they have been calling intuition, sensitivity, or professional instinct
-            has always been something else — something older, and more specific.
-        </p>
-        <p>
-            The Ashveil Mere Series follows six women who arrive in a North Yorkshire village
-            in the aftermath of professional crises, each carrying a gift she has been managing
-            as a liability. Together, they find the one place that has been waiting for exactly
-            what they are.
-        </p>
-        <p>
-            <em>The series is now complete. All six books are available on Amazon and Kindle Unlimited.</em>
-        </p>
-    </section>
+      <article class="book">
+        <a class="cover" href="https://www.amazon.com/dp/B0HQHMWFNN" target="_blank" rel="noopener" aria-label="The House Not on the Inventory on Amazon">
+          <div class="ph"><small>The Marian Teague Mysteries<br>Book Six</small><b>THE HOUSE<br>NOT ON THE<br>INVENTORY</b><i></i><em>ARIANA VALE</em></div>
+          <img src="img/book6.jpg" width="600" height="900" loading="lazy" alt="Cover of The House Not on the Inventory" onerror="this.remove()">
+        </a>
+        <p class="num">Book Six · The finale</p>
+        <h3>The House Not on the Inventory</h3>
+        <p class="where">Kestrel Street, Dartmouth, Nova Scotia</p>
+        <p>Marian goes home to her late mother’s house, a key, and the last inventory Louise Teague left unfinished.</p>
+        <a class="link" href="https://www.amazon.com/dp/B0HQHMWFNN" target="_blank" rel="noopener">View on Amazon</a>
+      </article>
+    </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 Ariana Vale. All rights reserved.</p>
-        <p><a href="mailto:ariana@arianavale.com">ariana@arianavale.com</a></p>
-        <p><a href="https://arianavale.substack.com" target="_blank">Newsletter</a></p>
-    </footer>
+<section class="order" aria-label="Where the series goes">
+  <div class="wrap center">
+    <p class="eyebrow">Six places</p>
+    <h2>Where the winters go</h2>
+    <div class="rule"></div>
+    <div class="strip">
+      <div><span class="win"></span><b>TOLT HEAD</b><span>Newfoundland</span></div>
+      <div><span class="win"></span><b>CAIRN LODGE</b><span>The Rockies</span></div>
+      <div><span class="win"></span><b>PELLAM ISLAND</b><span>Lake Superior</span></div>
+      <div><span class="win"></span><b>DOMAINE DES ÉRABLES</b><span>Quebec</span></div>
+      <div><span class="win"></span><b>GLEN CORRACH</b><span>Scottish Highlands</span></div>
+      <div><span class="win"></span><b>KESTREL STREET</b><span>Dartmouth</span></div>
+    </div>
+  </div>
+</section>
 
-    <!-- JavaScript -->
-    <script>
-        const books = [
-            {
-                title: "The Memory Keeper",
-                subtitle: "The Ashveil Mere Series · Book One",
-                series: "Book 1 of 6",
-                cover: "images/book1_cover.jpg",
-                description: "Nora Ashby inherits a house on the Yorkshire moors and a gift she has been managing as a liability for nineteen years. In Thornfield-on-Moor, she finds the one place that has been waiting for exactly what she is.",
-                features: ["✦ Suspended surgeon", "🌿 Yorkshire moors", "✦ Tactile channel", "🏡 Found community"],
-                amazonLink: "https://www.amazon.com/dp/B0GGYM8XX1"
-            },
-            {
-                title: "The Storm Caller",
-                subtitle: "The Ashveil Mere Series · Book Two",
-                series: "Book 2 of 6",
-                cover: "images/book2_cover.jpg",
-                description: "Vera Hendricks arrives in Thornfield with thirty-one years of atmospheric data and a channel she has spent her career trying to make unnecessary. The data has always been pointing here.",
-                features: ["✦ Disgraced meteorologist", "🌩️ Atmospheric channel", "📊 Thirty-one years of data", "🌿 Yorkshire moors"],
-                amazonLink: "https://www.amazon.com/dp/B0DB2JPQX4"
-            },
-            {
-                title: "The Truth Weaver",
-                subtitle: "The Ashveil Mere Series · Book Three",
-                series: "Book 3 of 6",
-                cover: "images/book3_cover.jpg",
-                description: "Rowan Adeyemi has been following a compass for four years without knowing what it was pointing at. A fired journalist with a gift for the weight of true things, she arrives in Thornfield and finds the story she was always meant to write.",
-                features: ["✦ Fired journalist", "📝 Linguistic channel", "✦ Truth-weight gift", "🌿 Yorkshire moors"],
-                amazonLink: "https://www.amazon.com/dp/B0GX2VMS52"
-            },
-            {
-                title: "The Bone Reader",
-                subtitle: "The Ashveil Mere Series · Book Four",
-                series: "Book 4 of 6",
-                cover: "images/book4_cover.jpg",
-                description: "Sylvie Okafor comes to Thornfield to identify seventeen sets of Victorian remains found beneath Ashveil Academy. She has been wearing gloves for nineteen years. In this place, she finally understands why.",
-                features: ["✦ Forensic anthropologist", "🦴 Forensic channel", "🏛️ Victorian cold case", "🌿 Yorkshire moors"],
-                amazonLink: "https://www.amazon.com/dp/B0GX32MS5H"
-            },
-            {
-                title: "The Dream Architect",
-                subtitle: "The Ashveil Mere Series · Book Five",
-                series: "Book 5 of 6",
-                cover: "images/book5_cover.jpg",
-                description: "Imogen Patel arrives to restore Ashveil Academy and discovers that the building has been waiting for her. A restoration architect with a spatial channel she has called her professional eye — here, it is finally called by its correct name.",
-                features: ["✦ Restoration architect", "🏛️ Spatial channel", "✦ Academy restoration", "🌿 Yorkshire moors"],
-                amazonLink: "https://www.amazon.com/dp/B0GGYM8XX1"
-            },
-            {
-                title: "The Mere Keeper",
-                subtitle: "The Ashveil Mere Series · Book Six",
-                series: "Book 6 of 6 — Series Complete",
-                cover: "images/book6_cover.jpg",
-                description: "Agnes Llewellyn has been at the water since 1879. She is one hundred and forty-seven years old, and she has been waiting for the community to arrive. Now she tells the truth about why.",
-                features: ["✦ Agnes's story", "💧 The ancient Mere", "✦ Series finale", "🌿 Yorkshire moors"],
-                amazonLink: "https://www.amazon.com/dp/B0GGYM8XX1"
-            }
-        ];
+<section id="more" aria-labelledby="more-h">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow">More from Ariana Vale</p>
+      <h2 id="more-h">Other series</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="series">
+      <article>
+        <h3>The Low Ground Series</h3>
+        <p>A conservator in the Georgia lowcountry reads the feeling behind old handwriting, and finds the stories someone tried to erase. Three books, complete.</p>
+      </article>
+      <article>
+        <h3>The Undisturbed Series</h3>
+        <p>An archaeologist surveys ground before it is built on, and the ground has been keeping its own records. Five books, complete.</p>
+      </article>
+      <article>
+        <h3>The Piedra Seca Series</h3>
+        <p>A tracker in a small New Mexico county follows what the land remembers, one careful step at a time. Five books, complete.</p>
+      </article>
+      <article>
+        <h3>The Saltmarsh Witnesses</h3>
+        <p>Four women arrive separately on the same stretch of Scottish coastline, each carrying a gift she has spent years treating as a liability.</p>
+      </article>
+      <article>
+        <h3>The Ashveil Mere Series</h3>
+        <p>A community of women gathers around a seven-hundred-year-old peat bog on the North York Moors, each arriving with a gift she has been managing as a problem.</p>
+      </article>
+      <article>
+        <h3>The Weave Arbiter Trilogy</h3>
+        <p>Fired at forty-two and newly divorced, Elena Blackwood discovers that twenty years of legal expertise can rewrite reality.</p>
+      </article>
+    </div>
+    <div class="more">
+      <a class="btn" href="https://www.amazon.com/author/arianavale" target="_blank" rel="noopener">See every book on Amazon</a>
+    </div>
+  </div>
+</section>
 
-        let currentBookIndex = 0;
+<section class="news" id="news" aria-labelledby="news-h">
+  <div class="wrap">
+    <p class="eyebrow">Newsletter</p>
+    <h2 id="news-h">Stay in the loop</h2>
+    <div class="rule"></div>
+    <p>New releases, notes from behind the books, and occasional writing from Ariana Vale, delivered by Substack.</p>
+    <a class="btn primary" href="https://arianavale.substack.com" target="_blank" rel="noopener">Read &amp; subscribe on Substack</a>
+  </div>
+</section>
 
-        function showBook(index) {
-            currentBookIndex = index;
-            const book = books[index];
+<section class="about" id="about" aria-labelledby="about-h">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow">The author</p>
+      <h2 id="about-h">About Ariana Vale</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="grid">
+      <p>Ariana Vale writes literary paranormal women’s fiction about women over forty, overlooked work, unusual gifts, and the relief of being accurately perceived.</p>
+      <p>Her newest series, <em>The Marian Teague Mysteries</em>, follows a former hotel head of housekeeping who takes winter work minding closed properties, a different place in each of six books, from a lighthouse inn in Newfoundland to her late mother’s house in Dartmouth, Nova Scotia. She has no supernatural gift. The buildings carry the strangeness, and every case is closed with evidence, not visions.</p>
+      <p>Earlier series include <em>The Saltmarsh Witnesses</em>, set on the Scottish coast; <em>The Ashveil Mere Series</em>, set on the North York Moors; and her debut, <em>The Weave Arbiter Trilogy</em>, in which a fired lawyer finds that twenty years of legal expertise can rewrite reality.</p>
+      <p>Vale is interested in the kind of knowledge that cannot be explained in professional contexts, and the weight of a true thing finally being named.</p>
+    </div>
+  </div>
+</section>
 
-            document.getElementById('currentCover').src = book.cover;
-            document.getElementById('currentCover').alt = book.title + " Cover";
-            document.getElementById('bookTitle').textContent = book.title;
-            document.getElementById('bookSubtitle').textContent = book.subtitle;
-            document.getElementById('bookDescription').textContent = book.description;
-            document.getElementById('amazonLink').href = book.amazonLink;
-            document.getElementById('seriesBadge').textContent = book.series;
+</main>
 
-            const featuresHTML = book.features
-                .map(f => `<span class="feature">${f}</span>`)
-                .join('');
-            document.getElementById('bookFeatures').innerHTML = featuresHTML;
+<footer>
+  <div class="wrap">
+    <div class="links">
+      <a href="https://www.amazon.com/author/arianavale" target="_blank" rel="noopener">Amazon Author Page</a>
+      <a href="https://arianavale.substack.com" target="_blank" rel="noopener">Substack</a>
+      <a href="mailto:ariana@arianavale.com">Email</a>
+    </div>
+    <p>&copy; 2026 Ariana Vale. All rights reserved.</p>
+  </div>
+</footer>
 
-            document.querySelectorAll('.indicator').forEach((ind, i) => {
-                ind.classList.toggle('active', i === index);
-            });
-        }
-
-        function nextBook() {
-            currentBookIndex = (currentBookIndex + 1) % books.length;
-            showBook(currentBookIndex);
-        }
-
-        function previousBook() {
-            currentBookIndex = (currentBookIndex - 1 + books.length) % books.length;
-            showBook(currentBookIndex);
-        }
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'ArrowLeft') previousBook();
-            else if (e.key === 'ArrowRight') nextBook();
-        });
-
-        showBook(0);
-    </script>
 </body>
 </html>
